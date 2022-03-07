@@ -6,7 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="/js/Owl/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="/public/js/Owl/dist/assets/owl.theme.default.min.css">
+    <title>
+        <%=title%>
+    </title>
 </head>
 
 <body>
@@ -23,7 +27,9 @@
                         <a href="" class="btn_right btn_general">Donate</a>
                     </div>
                 </div>
-                <div class="right_section"></div>
+                <div class="right_section">
+                    <img src="/Assets/hero.svg" alt="" srcset="">
+                </div>
             </div>
         </section>
         <!-- middle section -->
@@ -36,7 +42,7 @@
                     <h1>About Us</h1>
                     <p>Doer's is national organisation harnessing the power of data and evidence to end poverty, reduce inequality and increase resilience.
                     </p>
-                    <a href="">Learn more</a>
+                    <a class="learn_more" href="">Learn more</a>
                 </div>
             </div>
         </section>
@@ -49,21 +55,91 @@
             <div class="do_div">
                 <ul class="do_ul">
                     <li>
-                        <i>icon</i>
+                        <img src="/Assets/agric.png" alt="">
                         <h1>Agriculture</h1>
                     </li>
                     <li>
-                        <i>icon</i>
-                        <h1>Agriculture</h1>
+                        <img src="/Assets/hand.png" alt="">
+                        <h1>Co-operation</h1>
                     </li>
                     <li>
-                        <i>icon</i>
-                        <h1>Agriculture</h1>
+                        <img src="/Assets/climate.png" alt="">
+                        <h1>Climate Change</h1>
                     </li>
                 </ul>
             </div>
         </section>
+        <section class="carousel">
+            <style>
+                .carousel {
+                    width: 100%;
+                    height: 400px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: row;
+                }
+                
+                .owl-carousel {
+                    width: 80%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 20px;
+                    flex-direction: row;
+                    list-style: none;
+                    align-items: center;
+                }
+                
+                .owl-nav button span {
+                    font-size: 40px;
+                }
+                
+                .owl-nav button {
+                    width: 200px;
+                }
+                
+                .owl .owl-carousel .owl-carousel li {
+                    width: 400px;
+                    height: 390px;
+                    background-color: blue;
+                }
+            </style>
+            <div class="owl-carousel">
+                <li> Your Content </li>
+                <li> Your Content </li>
+                <li> Your Content </li>
+                <li> Your Content </li>
+                <li> Your Content </li>
+                <li> Your Content </li>
+                <li> Your Content </li>
+            </div>
+        </section>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/Owl/dist/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        responsiveClass: true,
+        responsive: {
+            0: {
+                items: 1,
+                nav: true
+            },
+            600: {
+                items: 3,
+                nav: false
+            },
+            1000: {
+                items: 3,
+                nav: true,
+                loop: false
+            }
+        }
+    })
+</script>
 
 </html>

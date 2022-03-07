@@ -1,8 +1,6 @@
 <link rel="stylesheet" href="/styles/variable.css">
 <link rel="stylesheet" href="/styles/nav.css">
-<div class="nav_div">
-    <style>
-    </style>
+<div id="nav" class="nav_div">
     <nav class="nav">
         <h1>Logo</h1>
         <ul>
@@ -10,6 +8,17 @@
             <a href="/about">About us</a>
             <a href="/about">What we do</a>
         </ul>
-        <a href="">Donates</a>
+        <a class="donate_btn_nav" href="">Donates</a>
     </nav>
 </div>
+
+<script>
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', (e) => {
+        if (window.pageYOffset > 10) {
+            nav.classList.add('active_nav')
+        } else {
+            nav.classList.remove('active_nav')
+        }
+    })
+</script>

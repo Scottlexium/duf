@@ -10,7 +10,7 @@ app.use(express.static('public'));;
 app.set('views', 'views');
 
 app.get('/', (req, res) => {
-    res.render('index');
+    res.render('index', { title: "DUF" });
 })
 app.get('/about', (req, res) => {
     res.render('about');
@@ -18,11 +18,15 @@ app.get('/about', (req, res) => {
 app.get('/contact_us', (req, res) => {
     res.render('contact_us');
 });
-app.use('*', (req, res) => {
-    res.status(404);
-    res.render('404');
+app.get('/try', (req, res) => {
+    res.status(200).json({ name: "Scott" })
 })
 app.get('/favicon.ico', (req, res) => {
     res.status(200);
 })
+app.use('*', (req, res) => {
+    res.status(404);
+    res.render('404');
+})
+
 app.listen(port, () => console.log(`Listening on http://localhost:${port}`))
