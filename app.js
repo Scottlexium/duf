@@ -1,9 +1,10 @@
 const express = require('express');
 const app = express()
-const port = 4040
 const bodyparser = require('body-parser');
+const dotenv = require('dotenv')
+dotenv.config();
 
-
+const port = process.env.PORT || 4049
 app.set('view engine', 'ejs');
 app.use(express.static('public'));;
 app.set('views', 'views');
