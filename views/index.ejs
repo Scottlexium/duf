@@ -145,6 +145,7 @@
                 align-items: center;
                 gap: 30px;
                 flex-wrap: wrap;
+                margin-top: 150px;
             }
 
             .donate_main {
@@ -177,7 +178,8 @@
                 font-size: 42px;
                 color: #07003B;
             }
-            .donate_left p{
+
+            .donate_left p {
                 color: #80858C;
             }
 
@@ -190,7 +192,13 @@
                 background-color: var(--blue100);
                 gap: 30px;
             }
-            .donate_right button{
+
+            .donate_right p {
+                color: var(--gray400);
+                margin-top: -30px;
+            }
+
+            .donate_right button {
                 margin-top: 20px;
                 background-color: var(--orange800);
                 padding: 8px 12px;
@@ -255,20 +263,154 @@
             </div>
         </section>
 </body>
+<footer>
+    <style>
+        footer {
+            width: 100%;
+            height: auto;
+            position: relative;
+            background-color: var(--purple700);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 100px;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .footer_main {
+            display: flex;
+            justify-content: space-around;
+            width: 80%;
+            padding: 30px;
+            margin-top: 100px;
+        }
+
+        .footer_main h1, .news
+        p {
+            color: white;
+        }
+
+        .footer_main form {
+            height: 50px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer_left {
+            display: grid;
+            gap: 20px;
+        }
+
+        .footer_main form input {
+            width: 80%;
+            flex: 2;
+        }
+
+        .footer_main form button {
+            background-color: var(--orange800);
+            border: solid 1px var(--orange800);
+            outline: none;
+            color: white;
+            width: 90%;
+            flex: 1;
+        }
+    </style>
+    <div class="footer_main">
+        <div class="footer_left">
+            <div class="news">
+                <h1>Newsletter</h1>
+                <p>Subscribe to our newsletter to get more information</p>
+            </div>
+            <form class="subscibe" action="">
+                <input type="email" name="" id="" placeholder="Email">
+                <button>Subscribe</button>
+            </form>
+        </div>
+        <style>
+            .f_right_a a:hover {
+                color: var(--orange800);
+            }
+
+            .f_nav a:hover {
+                color: var(--orange800);
+            }
+
+            .f_nav {
+                display: flex;
+                flex-direction: column;
+
+            }
+
+            .f_nav a {
+                color: rgba(245, 245, 245, 0.788);
+                font-size: 14px;
+            }
+
+            .footer_middle {
+                display: flex;
+                flex-direction: column;
+                gap: 30px;
+                line-height: 2;
+                margin-top: -10px;
+            }
+
+            .f_social {
+                margin-top: 20px;
+            }
+
+            .footer_right {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .f_right_a {
+                display: grid;
+            }
+
+            .f_right_a a {
+                color: rgba(245, 245, 245, 0.788);
+                font-size: 14px;
+            }
+        </style>
+        <div class="footer_middle">
+            <div class="navigation">
+                <h1>Navigation</h1>
+                <div class="f_nav">
+                    <a href="">About us</a>
+                    <a href="">What we do</a>
+                    <a href="">Testimonals</a>
+                </div>
+            </div>
+            <div class="connected">
+                <h1>Stay Connected</h1>
+                <div class="f_nav">
+                    <a href="">Contact us</a>
+                    <a href="">Media Centre</a>
+                </div>
+                <div class="f_social">
+                    <img src="https://img.icons8.com/color/48/000000/facebook.png" />
+                    <img src="https://img.icons8.com/color/48/000000/linkedin.png" />
+                    <img src="https://img.icons8.com/fluency/48/000000/twitter.png" />
+                    <img src="https://img.icons8.com/color/48/000000/youtube-play.png" />
+                </div>
+            </div>
+        </div>
+        <div class="footer_right">
+            <h1>Policies</h1>
+            <div class="f_right_a">
+                <a href="">Privacy and cookies</a>
+                <a href="">Income policy</a>
+            </div>
+        </div>
+    </div>
+</footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<!-- <script src="/js/Owl/dist/owl.carousel.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
-<script>
-    var limit = 1;
-    const input = document.querySelector('.single-checkbox');
-    // const limit = 1;
-    // $('input.single-checkbox').on('change', function(evt) {
-    //     if ($(this).siblings(':checked').length >= limit) {
-    //         this.checked = false;
-    //     }
-    // });
-</script>
 <script>
     $('.owl-carousel').owlCarousel({
         loop: true,
