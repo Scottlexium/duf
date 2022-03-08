@@ -508,3 +508,18 @@ p {
     color: rgba(245, 245, 245, 0.788);
     font-size: 14px;
 }
+
+/* copywrite */
+.copyright{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.copyright h3{
+    color: white;
+}
+.copyright p{
+    color: whitesmoke;
+}
