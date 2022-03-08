@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles/styles.css">
-    <link rel="stylesheet" href="/js/Owl/dist/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="/public/js/Owl/dist/assets/owl.theme.default.min.css">
+    <!-- <link rel="stylesheet" href="/js/Owl/dist/assets/owl.carousel.min.css"> -->
+    <!-- <link rel="stylesheet" href="/public/js/Owl/dist/assets/owl.theme.default.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <title>
         <%=title%>
     </title>
@@ -70,60 +72,124 @@
             </div>
         </section>
         <section class="carousel">
-            <style>
-                .carousel {
-                    width: 100%;
-                    height: 400px;
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    flex-direction: row;
-                }
-                
-                .owl-carousel {
-                    width: 80%;
-                    height: 100%;
-                    display: flex;
-                    justify-content: space-between;
-                    gap: 20px;
-                    flex-direction: row;
-                    list-style: none;
-                    align-items: center;
-                }
-                
-                .owl-nav button span {
-                    font-size: 40px;
-                }
-                
-                .owl-nav button {
-                    width: 200px;
-                }
-                
-                .owl .owl-carousel .owl-carousel li {
-                    width: 400px;
-                    height: 390px;
-                    background-color: blue;
-                }
-            </style>
-            <div class="owl-carousel">
-                <li> Your Content </li>
-                <li> Your Content </li>
-                <li> Your Content </li>
-                <li> Your Content </li>
-                <li> Your Content </li>
-                <li> Your Content </li>
-                <li> Your Content </li>
+
+            <div class="slider_main">
+                <h1>Testimonals</h1>
+                <div class="owl-carousel">
+                    <li>
+                        <img src="/Assets/carousel/man.jpg" alt="">
+                        <h2>Decoy Adams</h2>
+                        <p>Ceo- Warlur</p>
+                        <a class="slider-l-more" href="">Learn more</a>
+                    </li>
+                    <li>
+                        <img src="/Assets/carousel/man.jpg" alt="">
+                        <h2>Decoy Adams</h2>
+                        <p>Ceo- Warlur</p>
+                        <a class="slider-l-more" href="">Learn more</a>
+                    </li>
+                    <li>
+                        <img src="/Assets/carousel/man.jpg" alt="">
+                        <h2>Decoy Adams</h2>
+                        <p>Ceo- Warlur</p>
+                        <a class="slider-l-more" href="">Learn more</a>
+                    </li>
+                    <li>
+                        <img src="/Assets/carousel/man.jpg" alt="">
+                        <h2>Decoy Adams</h2>
+                        <p>Ceo- Warlur</p>
+                        <a class="slider-l-more" href="">Learn more</a>
+                    </li>
+                    <li>
+                        <img src="/Assets/carousel/man.jpg" alt="">
+                        <p>Ceo- Warlur</p>
+                        <a class="slider-l-more" href="">Learn more</a>
+                    </li>
+                    <li>
+                        <img src="/Assets/carousel/man.jpg" alt="">
+                        <p>Ceo- Warlur</p>
+                        <a class="slider-l-more" href="">Learn more</a>
+                    </li>
+                    <li>
+                        <img src="/Assets/carousel/man.jpg" alt="">
+                        <p>Ceo- Warlur</p>
+                        <a class="slider-l-more" href="">Learn more</a>
+                    </li>
+                </div>
+            </div>
+        </section>
+        <!-- map section -->
+        <style>
+            .map_section {
+                width: 100%;
+                height: 600px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 70px;
+            }
+            
+            .map_main {
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+            .map_left {
+                width: 600px;
+                height: 100%;
+            }
+            
+            .map_left img {
+                width: 100%;
+                height: 100%;
+            }
+            
+            .map_right {
+                width: 40%;
+                height: 100%;
+                background-color: var(--blue200);
+                padding: 20px;
+                border-radius: 15px;
+            }
+            
+            .map_right h1 {
+                font-size: 30px;
+                color: var(--orange800);
+                font-weight: bold;
+            }
+            
+            .map_right p {
+                color: var(--gray400);
+                margin-top: 30px;
+            }
+        </style>
+        <section class="map_section">
+            <div class="map_main">
+                <div class="map_left">
+                    <img src="/Assets/map.png" alt="" srcset="">
+                </div>
+                <div class="map_right">
+                    <h1>Touching lives everywere<br> we go
+                    </h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dicta eos eaque error, itaque voluptatem sapiente voluptatum a soluta, expedita laudantium quos sed maiores cum magni. Ad dicta neque maxime.</p>
+                </div>
             </div>
         </section>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/js/Owl/dist/owl.carousel.min.js"></script>
+<!-- <script src="/js/Owl/dist/owl.carousel.min.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
 <script>
     $('.owl-carousel').owlCarousel({
         loop: true,
         margin: 10,
+        autoplay: true,
+        autoplayTimeout: 2000,
         responsiveClass: true,
+        lazyLoad: true,
         responsive: {
             0: {
                 items: 1,

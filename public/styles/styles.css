@@ -195,3 +195,70 @@
 .top_do p {
     color: #80858C;
 }
+
+
+/* slider */
+
+.carousel {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 50px;
+}
+
+.slider_main {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: column;
+    list-style: none;
+    align-items: center;
+}
+
+.slider_main h1 {
+    font-size: 30px;
+}
+
+.owl-carousel {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-direction: row;
+    list-style: none;
+    align-items: center;
+}
+
+.owl-nav {
+    display: flex;
+    justify-content: center;
+}
+
+.owl-nav button span {
+    font-size: 40px;
+}
+
+.owl-nav button {
+    width: 200px;
+}
+
+.owl-carousel li {
+    width: 400px;
+    height: 390px;
+    /* background-color: blue; */
+}
+
+.owl-carousel li img {
+    width: 100%;
+    height: auto;
+}
+
+.slider-l-more {
+    color: var(--orange800);
+}
