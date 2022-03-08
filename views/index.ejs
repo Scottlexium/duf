@@ -9,7 +9,8 @@
     <!-- <link rel="stylesheet" href="/js/Owl/dist/assets/owl.carousel.min.css"> -->
     <!-- <link rel="stylesheet" href="/public/js/Owl/dist/assets/owl.theme.default.min.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <title>
         <%=title%>
     </title>
@@ -42,7 +43,8 @@
                 </div>
                 <div class="second_right">
                     <h1>About Us</h1>
-                    <p>Doer's is national organisation harnessing the power of data and evidence to end poverty, reduce inequality and increase resilience.
+                    <p>Doer's is national organisation harnessing the power of data and evidence to end poverty, reduce
+                        inequality and increase resilience.
                     </p>
                     <a class="learn_more" href="">Learn more</a>
                 </div>
@@ -119,52 +121,6 @@
             </div>
         </section>
         <!-- map section -->
-        <style>
-            .map_section {
-                width: 100%;
-                height: 600px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                margin-top: 70px;
-            }
-            
-            .map_main {
-                width: 70%;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            
-            .map_left {
-                width: 600px;
-                height: 100%;
-            }
-            
-            .map_left img {
-                width: 100%;
-                height: 100%;
-            }
-            
-            .map_right {
-                width: 40%;
-                height: 100%;
-                background-color: var(--blue200);
-                padding: 20px;
-                border-radius: 15px;
-            }
-            
-            .map_right h1 {
-                font-size: 30px;
-                color: var(--orange800);
-                font-weight: bold;
-            }
-            
-            .map_right p {
-                color: var(--gray400);
-                margin-top: 30px;
-            }
-        </style>
         <section class="map_section">
             <div class="map_main">
                 <div class="map_left">
@@ -173,7 +129,128 @@
                 <div class="map_right">
                     <h1>Touching lives everywere<br> we go
                     </h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dicta eos eaque error, itaque voluptatem sapiente voluptatum a soluta, expedita laudantium quos sed maiores cum magni. Ad dicta neque maxime.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dicta eos eaque error,
+                        itaque voluptatem sapiente voluptatum a soluta, expedita laudantium quos sed maiores cum magni.
+                        Ad dicta neque maxime.</p>
+                </div>
+            </div>
+        </section>
+        <!-- donate section -->
+        <style>
+            .donate_section {
+                width: 100%;
+                height: 300px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 30px;
+                flex-wrap: wrap;
+            }
+
+            .donate_main {
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                max-width: 80%;
+                height: 100%;
+                gap: 40px;
+            }
+
+            .donate_left {
+                width: 70%;
+                height: 300px;
+                max-width: 300px;
+                background-image: url('/Assets/other.png');
+                background-position: center bottom;
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                padding: 40px;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+                gap: 30px;
+            }
+
+            .donate_left h1 {
+                font-size: 42px;
+                color: #07003B;
+            }
+            .donate_left p{
+                color: #80858C;
+            }
+
+            .donate_right {
+                width: 40%;
+                height: 70%;
+                padding: 50px;
+                display: flex;
+                flex-direction: column;
+                background-color: var(--blue100);
+                gap: 30px;
+            }
+            .donate_right button{
+                margin-top: 20px;
+                background-color: var(--orange800);
+                padding: 8px 12px;
+                outline: none;
+                border: solid 1px var(--orange800);
+                color: white;
+                font-weight: bold;
+                font-size: 20px;
+                border-radius: 8px;
+            }
+        </style>
+        <section class="donate_section">
+            <div class="donate_main">
+                <div class="donate_left">
+                    <h1>Donate now!</h1>
+                    <p>Everyone can help</p>
+                </div>
+                <style>
+                    form {
+                        margin-bottom: 400px;
+                    }
+
+                    .fixed_price {
+                        width: 100px;
+                        border: none;
+                        outline: none;
+                        background-color: white;
+                        padding: 10px;
+                        cursor: pointer;
+                    }
+
+                    .fixed_price::selection {
+                        background-color: white;
+                        padding: 400px;
+                    }
+
+                    input {
+                        width: 100px;
+                        border: none;
+                        outline: none;
+                        background-color: white;
+                        padding: 10px;
+                    }
+                </style>
+                <div class="donate_right">
+                    <h1>Amount</h1>
+                    <p>Individual donors or foundations</p>
+                    <form name="donate_form" id="donate_form" onchange="fire()" action="">
+                        <select class="fixed_price" name="" id="">
+                            <option value="">NGN 50</option>
+                            <option value="">NGN 100</option>
+                        </select>
+                        <input class="more_price" type="number" name="" value="" id="" placeholder="NGN1000">
+                        <button>Proceed</button>
+                    </form>
+
+                    <script>
+                        const usd50 = document.getElementById('50usdLabel');
+                        const usd100 = document.getElementById('100usdLabel');
+                    </script>
                 </div>
             </div>
         </section>
@@ -182,6 +259,16 @@
 <!-- <script src="/js/Owl/dist/owl.carousel.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 <script src="/js/main.js"></script>
+<script>
+    var limit = 1;
+    const input = document.querySelector('.single-checkbox');
+    // const limit = 1;
+    // $('input.single-checkbox').on('change', function(evt) {
+    //     if ($(this).siblings(':checked').length >= limit) {
+    //         this.checked = false;
+    //     }
+    // });
+</script>
 <script>
     $('.owl-carousel').owlCarousel({
         loop: true,

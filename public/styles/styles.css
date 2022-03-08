@@ -262,3 +262,51 @@
 .slider-l-more {
     color: var(--orange800);
 }
+
+
+/* map */
+
+.map_section {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.map_main {
+    width: 70%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.map_left {
+    width: 600px;
+    height: 100%;
+}
+
+.map_left img {
+    width: 100%;
+    height: 100%;
+}
+
+.map_right {
+    width: 40%;
+    height: 100%;
+    background-color: var(--blue200);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.map_right h1 {
+    font-size: 30px;
+    color: var(--orange800);
+    font-weight: bold;
+}
+
+.map_right p {
+    color: var(--gray400);
+    margin-top: 30px;
+}
