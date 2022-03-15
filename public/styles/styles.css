@@ -594,6 +594,12 @@ button {
     }
     .footer_middle, .footer_right{
         margin-top: -350px;
+        float: left;
+    }
+    .footer_right{
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
     }
 }
 
