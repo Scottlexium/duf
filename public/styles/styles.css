@@ -272,7 +272,7 @@
     display        : flex;
     justify-content: center;
     align-items    : center;
-    margin-top     : 70px;
+    margin-top     : 100px;
 }
 
 .map_main {
@@ -421,7 +421,8 @@ footer {
     display         : flex;
     justify-content : center;
     align-items     : center;
-    margin-top      : 700px;
+    margin-top      : 100px;
+    padding-bottom: 100px;
 }
 
 button {
@@ -569,16 +570,94 @@ button {
         margin-top: 300px;
     }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+    .footer_main{
+        flex-wrap: wrap;
+    }
+    .footer_middle, .footer_right{
+        margin-top: -300px;
+        flex-wrap: wrap;
+    }
+    .navigation h1{
+        font-size: 18px;
+    }
+    .navigation a{
+        font-size: 12px;
+    }
+}
+@media only screen and (max-width: 580px) {
+    .navigation h1, .connected h1, .news h1, .footer_right h1{
+        font-size: 18px;
+    }
+    .news p{
+        font-size: 12px;
+    }
+    .footer_middle, .footer_right{
+        margin-top: -350px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .map_right{
+        width: 100%;
+        max-width: 100%;
+        margin-top: 50px;
+        padding: 40px;
+    }
+    .map_right h1{
+        font-size: 22px;
+    }
+    .map_right p{
+        font-size: 14px;
+    }
+    .donate_section{
+        margin-top: 400px;
+    }
+    .footer_main_right_responsive{
+        visibility: visible;
+    }
     
 }
 
+.footer_main_right_responsive{
+    display: none;
+}
+@media screen and (max-width: 520px) {
+    .f_none{
+        display: none;
+    }
+    .footer_main_right_responsive{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .footer_main_right_responsive .footer_right{
+        margin-top: 0px;
+    }
+    .copyright{
+        padding-top: 40px;
+        padding: 30px;
+        margin-top: 50px;
+    }
+    .copyright h3{
+        font-size: 14px;
+    }
+    .footer_main{
+        margin-top: 0px;
+        padding-bottom: 50px;
+    }
+}
+@media screen and (max-width: 502px) {
+
+}
 @media only screen and (max-width: 670px) {
     .donate_main {
         flex-wrap : wrap;
-        margin-top: -100px;
+        margin-top: -300px;
         width: 90%;
         justify-content: center;
+    }
+    footer{
+        margin-top: 300px;
     }
     .do_ul{
         flex-wrap: wrap;
