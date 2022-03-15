@@ -3,7 +3,7 @@
 <div id="nav" class="nav_div">
     <nav class="nav">
         <h1>Logo</h1>
-        <ul>
+        <ul class="desktop_nav">
             <a href="/">Home</a>
             <a href="/about">About us</a>
             <a href="/about">What we do</a>
@@ -11,7 +11,30 @@
         <a class="donate_btn_nav" href="">Donates</a>
     </nav>
 </div>
+<style>
+    @media only screen and (max-width: 600px) {
+    .nav ul, .right_section{
+        display: none;
+    }
+    .nav{
+        justify-content: space-between;
+    }
+    .left_section{
+        justify-content: center;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .btns{
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        width: 90%;
+        justify-self: center;
+    }
+}
 
+</style>
 <script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', (e) => {
