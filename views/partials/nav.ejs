@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/styles/variable.css">
 <link rel="stylesheet" href="/styles/nav.css">
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <div id="nav" class="nav_div">
     <nav class="nav">
         <h1>Logo</h1>
@@ -11,29 +12,40 @@
         <a class="donate_btn_nav" href="">Donates</a>
     </nav>
 </div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init({
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 1000
+    });
+</script>
 <style>
     @media only screen and (max-width: 600px) {
-    .nav ul, .right_section{
-        display: none;
-    }
-    .nav{
-        justify-content: space-between;
-    }
-    .left_section{
-        justify-content: center;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .btns{
-        flex-wrap: nowrap;
-        justify-content: space-between;
-        width: 90%;
-        justify-self: center;
-    }
-}
 
+        .nav ul,
+        .right_section {
+            display: none;
+        }
+
+        .nav {
+            justify-content: space-between;
+        }
+
+        .left_section {
+            justify-content: center;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .btns {
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            width: 90%;
+            justify-self: center;
+        }
+    }
 </style>
 <script>
     const nav = document.getElementById('nav');
