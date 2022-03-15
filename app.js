@@ -63,9 +63,9 @@ app.post('/success', (req, res) => {
             console.log(err)
         } else {
             console.log(info)
-            res.status(200).redirect('/success')
         }
     });
+    res.render('success', {title:'DUF'})
 })
 app.get('/favicon.ico', (req, res) => {
     res.status(200);
