@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
-        <link rel="stylesheet" href="/styles/preloader.css">
-        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-        <script src="/js/preloader.js"></script>
+    <link rel="stylesheet" href="/styles/preloader.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="/js/preloader.js"></script>
     <title>
         <%=title%>
     </title>
@@ -23,7 +23,7 @@
     <div class="preload" id="preload">
         <div id="preloader">
             <div id="loader"></div>
-          </div>
+        </div>
     </div>
     <%- include('./partials/nav.ejs')%>
         <section class="hero-section">
@@ -132,12 +132,10 @@
         <section class="map_section">
             <div class="map_main">
                 <div class="map_left">
-                    <img data-aos="flip-left"
-                    data-aos-easing="ease-out-cubic"
-                    data-aos-duration="2000" src="/Assets/map.png" alt="" srcset="">
+                    <img data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2000"
+                        src="/Assets/map.png" alt="" srcset="">
                 </div>
-                <div data-aos="fade-up"
-                data-aos-anchor-placement="center-center" class="map_right">
+                <div data-aos="fade-up" data-aos-anchor-placement="center-center" class="map_right">
                     <h1>Touching lives everywere<br> we go
                     </h1>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae dicta eos eaque error,
@@ -157,15 +155,15 @@
                 <div class="donate_right">
                     <h1>Amount</h1>
                     <p>Individual donors or foundations</p>
-                    <form name="donate_form" id="donate_form" onchange="fire()" action="">
-                        <select class="fixed_price" name="" id="">
-                            <option value="">NGN 50</option>
-                            <option value="">NGN 100</option>
+                    <form name="donate_form" id="donate_form" onchange="amount()" action="">
+                        <select class="fixed_price" name="" id="amount_select">
+                            <option value="other">Other</option>
+                            <option value="50">NGN 50</option>
+                            <option value="100">NGN 100</option>
                         </select>
-                        <input class="more_price" type="number" name="" value="" id="" placeholder="NGN1000">
-                        <button>Proceed</button>
+                        <input class="more_price" type="number" name="" value="" id="flexPrice" placeholder="NGN 1000">
+                        <button onclick="openModal()" type="button">Proceed</button>
                     </form>
-
                     <script>
                         const usd50 = document.getElementById('50usdLabel');
                         const usd100 = document.getElementById('100usdLabel');
@@ -173,6 +171,162 @@
                 </div>
             </div>
         </section>
+        <style>
+            .input_div input {
+                width: 100%;
+            }
+
+            .input_div {
+                margin-top: 20px;
+            }
+
+            .close_btn {
+                background: none;
+                border: none;
+                opacity: 0.6;
+            }
+            .close_btn img{
+                transition:all .8s ease-in-out;
+            }
+            .close_btn img:hover{
+                rotate: 90deg;
+                scale: 120%;
+            }
+
+            .proceed_btn_pay {
+                background: var(--orange800);
+                border: none;
+                height: 40px;
+                width: 70%;
+                border-radius: 5px;
+                color: white;
+                font-size: 18px;
+                font-weight: bold;
+
+            }
+            .modal_top{
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+                align-items: center;
+                margin-top: 10px;
+                border-bottom: solid 1px #fdb453;
+                padding-bottom: 10px;
+            }
+        </style>
+        <div class="modal"
+            style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); position: fixed; top: 0; bottom: 0; left: 0; display: none; justify-content: center; align-items: flex-end; z-index: 10;">
+            <form action="" onchange="modalChange()"
+                style="background-color: white; width: 360px; height: auto; max-width: 80%; border-radius: 8px; padding: 20px;">
+
+                <div class="modal_top">
+                    <h3>
+                        Personal Details
+                    </h3>
+                    <button type="button" onclick="closeModal()" class="close_btn">
+                        <img src="https://img.icons8.com/ios-glyphs/30/000000/delete-sign.png" />
+                    </button>
+                </div>
+                <div class="container_modal" style="margin-top: 30px; width: 100%; height: auto;">
+                    <div class="input_div" style="display: grid;">
+                        <label style="font-size: 14px;" for="">Full Name</label>
+                        <input id="name" type="text" placeholder="Scott Lexium">
+                    </div>
+                    <div class="input_div" style="display: grid;">
+                        <label style="font-size: 14px;" for="">Email Address</label>
+                        <input id="email" type="Email" placeholder="scottlexium@gmail.com">
+                    </div>
+                    <div class="input_div" style="display: grid;">
+                        <label style="font-size: 14px;" for="">Phone number</label>
+                        <input type="number" name="" id="phone" placeholder="+234-811-863-8617">
+                    </div>
+                    <div class="input_div" style="display: grid;">
+                        <label style="font-size: 14px;" for="">Address</label>
+                        <input type="address" name="" id="address" placeholder="59 ICE road, Abuja">
+                    </div>
+                    <div class="input_div" style="display: flex; justify-content: center; align-items: center;">
+                        <button onclick="donateFunction()" class="proceed_btn_pay" type="button">Proceed</button>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+
+        <script src="https://checkout.flutterwave.com/v3.js"></script>
+        <script>
+            function amount(e) {
+                const flexPrice = document.getElementById('flexPrice');
+                const amountFixed = document.getElementById('amount_select');
+                let finalAmount = null;
+                const preAmount = amountFixed.options[amountFixed.selectedIndex].value
+                if (preAmount == '50' || preAmount == '100') {
+                    finalAmount = preAmount
+                }
+                if (finalAmount !== '') {
+                    finalAmount = flexPrice.value;
+                }
+                if (preAmount !== 'other' && flexPrice.value !== '') {
+                    alert('Please select other for amounts greater than 100!')
+                }
+                if (finalAmount == '') {
+                    finalAmount = preAmount;
+                }
+                else {
+                    finalAmount = flexPrice.value;
+                }
+
+                sessionStorage.setItem('amount', finalAmount)
+                console.log(finalAmount);
+            }
+            function donateFunction(e) {
+                const userInfo = sessionStorage.getItem('details')
+                const amount = sessionStorage.getItem('amount');
+                FlutterwaveCheckout({
+                    public_key: "FLWPUBK_TEST-358831fd4a1bd960ba6af24ed1b70f8d-X",
+                    tx_ref: `DUF-${Date.now()}`,
+                    amount: amount,
+                    currency: "NGN",
+                    payment_options: "card, banktransfer",
+                    redirect_url: "",
+                    meta: {
+                        consumer_id: 23,
+                        consumer_mac: "92a3-912ba-1192a",
+                    },
+                    customer: {
+                        email: userInfo[0],
+                        phone_number: userInfo[1],
+                        name: userInfo[2],
+                        address: userInfo[3]
+                    },
+                    customizations: {
+                        title: "Doers Uplifting Foundation(test)",
+                        description: "DUF Donation",
+                        logo: "https://www.logolynx.com/images/logolynx/22/2239ca38f5505fbfce7e55bbc0604386.jpeg",
+                    },
+                });
+            }
+            const modal = document.querySelector('.modal')
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+            function openModal() {
+                modal.style.display = 'flex'
+            }
+            function modalChange(e) {
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                const address = document.getElementById('address').value;
+                const name = document.getElementById('name').value;
+                const details = [email, phone, name, address];
+                // sessionStorage.setItem('email', email )
+                // sessionStorage.setItem('address', address)
+                // sessionStorage.setItem('phone', phone )
+                sessionStorage.setItem('details', details);
+                console.log(details[0])
+            }
+
+        </script>
 </body>
 <footer>
 
@@ -220,41 +374,42 @@
             </div>
         </div>
         <!-- mobile version -->
-            <div class="f_none footer_middle">
-                <div class="navigation">
-                    <h1>Navigation</h1>
-                    <div class="f_nav">
-                        <a href="">About us</a>
-                        <a href="">What we do</a>
-                        <a href="">Testimonals</a>
-                    </div>
-                </div>
-                <div class="connected">
-                    <h1>Stay Connected</h1>
-                    <div class="f_nav">
-                        <a href="">Contact us</a>
-                        <a href="">Media Centre</a>
-                    </div>
-                    <div class="f_social">
-                        <img src="https://img.icons8.com/color/48/000000/facebook.png" />
-                        <img src="https://img.icons8.com/color/48/000000/linkedin.png" />
-                        <img src="https://img.icons8.com/fluency/48/000000/twitter.png" />
-                        <img src="https://img.icons8.com/color/48/000000/youtube-play.png" />
-                    </div>
+        <div class="f_none footer_middle">
+            <div class="navigation">
+                <h1>Navigation</h1>
+                <div class="f_nav">
+                    <a href="">About us</a>
+                    <a href="">What we do</a>
+                    <a href="">Testimonals</a>
                 </div>
             </div>
-            <div class="f_none footer_right">
-                <h1>Policies</h1>
-                <div class="f_right_a">
-                    <a href="">Privacy and cookies</a>
-                    <a href="">Income policy</a>
+            <div class="connected">
+                <h1>Stay Connected</h1>
+                <div class="f_nav">
+                    <a href="">Contact us</a>
+                    <a href="">Media Centre</a>
+                </div>
+                <div class="f_social">
+                    <img src="https://img.icons8.com/color/48/000000/facebook.png" />
+                    <img src="https://img.icons8.com/color/48/000000/linkedin.png" />
+                    <img src="https://img.icons8.com/fluency/48/000000/twitter.png" />
+                    <img src="https://img.icons8.com/color/48/000000/youtube-play.png" />
                 </div>
             </div>
-        
-        
+        </div>
+        <div class="f_none footer_right">
+            <h1>Policies</h1>
+            <div class="f_right_a">
+                <a href="">Privacy and cookies</a>
+                <a href="">Income policy</a>
+            </div>
+        </div>
+
+
     </div>
     <div class="copyright">
-        <h3>&copy; Copywrite 2022 Doer's </h3> <p> ||   Built By Scott Lexium</p>
+        <h3>&copy; Copywrite 2022 Doer's </h3>
+        <p> || Built By Scott Lexium</p>
     </div>
 </footer>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
