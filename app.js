@@ -52,7 +52,6 @@ app.post('/success', (req, res) => {
         subject: `DUF Donaton Success!`,
         html: `<p>Dear ${req.body.name}, 
         Thank you for your kind donation of${req.body.amount} at Doers uplifitng foundation
-        <a href='https://we-loan.herokuapp.com/profile/${docRef.id}'>DUF</>
         </br>
         Regards</br>
         DUF
@@ -64,7 +63,7 @@ app.post('/success', (req, res) => {
             console.log(err)
         } else {
             console.log(info)
-            response.status(200).redirect('/success')
+            res.status(200).redirect('/success')
         }
     });
 })
