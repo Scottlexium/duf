@@ -22,7 +22,7 @@
     @media only screen and (max-width: 600px) {
 
         .nav ul,
-        .right_section {
+        .right_section, .nav a {
             display: none;
         }
 
@@ -49,7 +49,7 @@
 <script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', (e) => {
-        if (window.pageYOffset > 10) {
+        if (window.pageYOffset > 1) {
             nav.classList.add('active_nav')
         } else {
             nav.classList.remove('active_nav')
