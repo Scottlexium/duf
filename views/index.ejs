@@ -185,10 +185,12 @@
                 border: none;
                 opacity: 0.6;
             }
-            .close_btn img{
-                transition:all .8s ease-in-out;
+
+            .close_btn img {
+                transition: all .8s ease-in-out;
             }
-            .close_btn img:hover{
+
+            .close_btn img:hover {
                 rotate: 90deg;
                 scale: 120%;
             }
@@ -204,7 +206,8 @@
                 font-weight: bold;
 
             }
-            .modal_top{
+
+            .modal_top {
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
@@ -252,9 +255,12 @@
             </form>
         </div>
 
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
+            integrity="sha512-bPh3uwgU5qEMipS/VOmRqynnMXGGSRv+72H/N260MQeXZIK4PG48401Bsby9Nq5P5fz7hy5UGNmC/W1Z51h2GQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://checkout.flutterwave.com/v3.js"></script>
         <script>
+            const host = location.host;
             function amount(e) {
                 const flexPrice = document.getElementById('flexPrice');
                 const amountFixed = document.getElementById('amount_select');
@@ -280,30 +286,72 @@
                 console.log(finalAmount);
             }
             function donateFunction(e) {
-                const userInfo = sessionStorage.getItem('details')
+                const name = sessionStorage.getItem('name');
+                const address = sessionStorage.getItem('address');
+                const phone = sessionStorage.getItem('phone');
+                const email = sessionStorage.getItem('email');
                 const amount = sessionStorage.getItem('amount');
-                FlutterwaveCheckout({
+                const payflutterwaveModalModal = FlutterwaveCheckout({
                     public_key: "FLWPUBK_TEST-358831fd4a1bd960ba6af24ed1b70f8d-X",
                     tx_ref: `DUF-${Date.now()}`,
                     amount: amount,
                     currency: "NGN",
-                    payment_options: "card, banktransfer",
-                    redirect_url: "",
+                    payment_options: "card",
                     meta: {
                         consumer_id: 23,
                         consumer_mac: "92a3-912ba-1192a",
                     },
                     customer: {
-                        email: userInfo[0],
-                        phone_number: userInfo[1],
-                        name: userInfo[2],
-                        address: userInfo[3]
+                        email: email,
+                        phone_number: phone,
+                        name: name,
+                        address: address
                     },
                     customizations: {
                         title: "Doers Uplifting Foundation(test)",
                         description: "DUF Donation",
                         logo: "https://www.logolynx.com/images/logolynx/22/2239ca38f5505fbfce7e55bbc0604386.jpeg",
                     },
+                    callback: function () {
+                        // Send AJAX verification request to backend
+                        // verifyTransactionOnBackend(payment.id);
+                        const data = { name: name, email: email, address: address, phone: phone, amount: amount };
+
+                        fetch(`http://${host}/success`, {
+                            method: 'POST', // or 'PUT'
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log('Success:', data);
+                            })
+                            .catch((error) => {
+                                console.error('Error:', error);
+                            });
+                            flutterwaveModal.close();
+
+                    },
+                    onclose: function (incomplete) {
+                        const data = { name: name, email: email, address: address, phone: phone, amount: amount };
+
+                        fetch(`http://${host}/success`, {
+                            method: 'POST', // or 'PUT'
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(data),
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                console.log('Success:', data);
+                            })
+                            .catch((error) => {
+                                console.error('Error:', error);
+                            });
+                    }
                 });
             }
             const modal = document.querySelector('.modal')
@@ -318,12 +366,13 @@
                 const phone = document.getElementById('phone').value;
                 const address = document.getElementById('address').value;
                 const name = document.getElementById('name').value;
-                const details = [email, phone, name, address];
-                // sessionStorage.setItem('email', email )
-                // sessionStorage.setItem('address', address)
-                // sessionStorage.setItem('phone', phone )
+                // const details = [email, phone, name, address];
+                sessionStorage.setItem('email', email)
+                sessionStorage.setItem('address', address)
+                sessionStorage.setItem('phone', phone)
+                sessionStorage.setItem('name', name)
                 sessionStorage.setItem('details', details);
-                console.log(details[0])
+                // console.log(details[0]);
             }
 
         </script>
