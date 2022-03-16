@@ -220,39 +220,40 @@
         <div class="modal"
             style="width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); position: fixed; bottom: 0; left: 0; display: none; justify-content: center; align-items: center; z-index: 10;">
             <form action="" onchange="modalChange()"
-                style="z-index: 500; background-color: white; width: 360px; height: auto; max-width: 80%; border-radius: 8px; padding: 20px; margin-top: 500px;">
+            style="z-index: 500; background-color: white; width: 360px; height: auto; max-width: 80%; border-radius: 8px; padding: 20px; margin-top: calc(100% - 100px); bottom: -400px;">
 
-                <div class="modal_top">
-                    <h3>
-                        Personal Details
-                    </h3>
-                    <button type="button" onclick="closeModal()" class="close_btn">
-                        <img src="https://img.icons8.com/ios-glyphs/30/000000/delete-sign.png" />
-                    </button>
+            <div class="modal_top">
+                <h3
+                    Personal Details
+                </h3>
+                <button type="button" onclick="closeModal()" class="close_btn">
+                    <img src="https://img.icons8.com/ios-glyphs/30/000000/delete-sign.png" />
+                </button>
+            </div>
+            <div class="container_modal" style="margin-top: 30px; width: 100%; height: auto;">
+                <div class="input_div" style="display: grid;">
+                    <label style="font-size: 14px;" for="">Full Name</label>
+                    <input id="name" type="text" placeholder="Scott Lexium">
                 </div>
-                <div class="container_modal" style="margin-top: 30px; width: 100%; height: auto;">
-                    <div class="input_div" style="display: grid;">
-                        <label style="font-size: 14px;" for="">Full Name</label>
-                        <input id="name" type="text" placeholder="Scott Lexium">
-                    </div>
-                    <div class="input_div" style="display: grid;">
-                        <label style="font-size: 14px;" for="">Email Address</label>
-                        <input id="email" type="Email" placeholder="scottlexium@gmail.com">
-                    </div>
-                    <div class="input_div" style="display: grid;">
-                        <label style="font-size: 14px;" for="">Phone number</label>
-                        <input type="number" name="" id="phone" placeholder="+234-811-863-8617">
-                    </div>
-                    <div class="input_div" style="display: grid;">
-                        <label style="font-size: 14px;" for="">Address</label>
-                        <input type="address" name="" id="address" placeholder="59 ICE road, Abuja">
-                    </div>
-                    <div class="input_div" style="display: flex; justify-content: center; align-items: center;">
-                        <button onclick="donateFunction()" class="proceed_btn_pay" type="button">Proceed</button>
-                    </div>
+                <div class="input_div" style="display: grid;">
+                    <label style="font-size: 14px;" for="">Email Address</label>
+                    <input id="email" type="Email" placeholder="scottlexium@gmail.com">
                 </div>
+                <div class="input_div" style="display: grid;">
+                    <label style="font-size: 14px;" for="">Phone number</label>
+                    <input type="number" name="" id="phone" placeholder="+234-811-863-8617">
+                </div>
+                <div class="input_div" style="display: grid;">
+                    <label style="font-size: 14px;" for="">Address</label>
+                    <input type="address" name="" id="address" placeholder="59 ICE road, Abuja">
+                </div>
+                <div class="input_div" style="display: flex; justify-content: center; align-items: center;">
+                    <button onclick="donateFunction()" class="proceed_btn_pay" type="button">Proceed</button>
+                </div>
+            </div>
 
-            </form>
+        </form>
+           
         </div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.26.1/axios.min.js"
