@@ -64,11 +64,12 @@ app.post('/success', (req, res) => {
         } else {
             console.log(info)
         }
+        res.render('success', { title: "DUF" });
     });
     res.render('success', {title:'DUF'})
 })
 app.get('/favicon.ico', (req, res) => {
-    res.status(200);
+    res.status(200)
 })
 app.use('*', (req, res) => {
     res.status(404);
