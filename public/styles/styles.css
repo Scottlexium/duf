@@ -530,7 +530,50 @@ button {
     color: whitesmoke;
 }
 
+.input_div input {
+    width: 100%;
+}
 
+.input_div {
+    margin-top: 20px;
+}
+
+.close_btn {
+    background: none;
+    border: none;
+    opacity: 0.6;
+}
+
+.close_btn img {
+    transition: all .8s ease-in-out;
+}
+
+.close_btn img:hover {
+    rotate: 90deg;
+    scale: 120%;
+}
+
+.proceed_btn_pay {
+    background: var(--orange800);
+    border: none;
+    height: 40px;
+    width: 70%;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+
+}
+
+.modal_top {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 10px;
+    border-bottom: solid 1px #fdb453;
+    padding-bottom: 10px;
+}
 
 /* media query */
 @media only screen and (max-width: 1196px) {
