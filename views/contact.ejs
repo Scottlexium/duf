@@ -71,19 +71,19 @@
             <h1 class="form-name">Contact Us</h1>
             <div class="form1 f">
                 <p class="title">Your Name(required)</p>
-                <input type="text" class="name" placeholder="John Doe">
+                <input value="" type="text" class="name" id="name" placeholder="John Doe">
             </div>
             <div class="form2 f">
                 <p class="title">Your Email(required)</p>
-                <input type="text" class="email" placeholder="Enter Email">
+                <input value="" type="text" class="email" id="email" placeholder="Enter Email">
             </div>
             <div class="form3 f">
                 <p class="title">Subject</p>
-                <input type="text" class="subject" placeholder="short description">
+                <input value="" type="text" class="subject" id="subject" placeholder="short description">
             </div>
             <div class="form4 f">
                 <p class="title">Your Message</p>
-                <input type="text" class="message" placeholder="Tell Us more">
+                <input value="" type="text" class="message" id="message" placeholder="Tell Us more">
             </div>
 
             <button type="submit">SEND</button>
@@ -92,46 +92,59 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script>
         const contactForm = document.getElementById('contact_form');
-        const name = document.querySelector('.name').value
-        const email = document.querySelector('.email').value
-        const subject = document.querySelector('.subject').value
-        const message = document.querySelector('.message').value
+        const prename = document.getElementById('name')
+        const preemail = document.getElementById('email')
+        const presubject = document.getElementById('subject')
+        const premessage = document.getElementById('message')
+        const name = prename.value;
+        const email = preemail.value;
+        const subject = presubject.value;
+        const message = premessage.value;
         contactForm.addEventListener('submit', async (e, res) => {
             e.preventDefault();
             const data = { name, email, subject, message };
 
-            fetch('/contact_post', {
-                method: 'POST', // or 'PUT'
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-                .then(response => response.json())
-                .then(data => {
-                    console.log('Success:', data);
-                    res = data.msg;
-                    showToast(res)
+            try {
+                fetch('/contact_post', {
+                    method: 'POST', // or 'PUT'
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data),
                 })
-                .catch((error) => {
-                    console.error('Error:', error);
-                });
+                    .then(response => response.json())
+                    .then(data => {
+                        console.log('Success:', data);
+                        if (data.msg) {
+                            res = data.msg
+                        }
+                        if (data.err) {
+                            res = data.err;
+                        }
+                        showToast(res)
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                    });
+            } catch (error) {
+                alert(error);
+            }
         })
 
         function showToast(res) {
             Toastify({
-            text: `${res}`,
-            duration: 3000,
-            destination: "https://github.com/apvarun/toastify-js",
-            newWindow: true,
-            close: true,
-            gravity: "top", // `top` or `bottom`
-            position: "left", // `left`, `center` or `right`
-            stopOnFocus: true, // Prevents dismissing of toast on hover
-            style: {
-                background: "linear-gradient(to right, #ff00ff, #ba55d3)",
-            }, // Callback after click
-        }).showToast();
+                text: `${res}`,
+                duration: 3000,
+                destination: "https://github.com/apvarun/toastify-js",
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "left", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                style: {
+                    background: "linear-gradient(to right, #ff00ff, #ba55d3)",
+                }, // Callback after click
+            }).showToast();
         }
 
 
@@ -149,4 +162,5 @@
 
 </body>
 <%- include('./partials/footer.ejs')%>
+
 </html>

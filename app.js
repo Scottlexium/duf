@@ -57,11 +57,19 @@ app.post('/contact_post',(req, res)=>{
     };
 
     transporter.sendMail(mailOptions, function (err, info) {
+        let smtpError = null;
         if (err) {
             console.log(err)
+            if (err.code == 'EENVELOPE') {
+                smtpError = 'No email provided, try refreshing!'
+            }
+            else{
+                smtpError = 'Unknown Error!';
+            }
+            res.status(200).json({err:'An error occured!'})
         } else {
             console.log(info)
-            res.status(200).json({msg:'Message Sent Successfully!'})
+            res.status(200).json({msg:smtpError})
         }
         
     });
