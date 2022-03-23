@@ -120,7 +120,9 @@ form {
     border      : none;
     padding-left: 1rem;
     max-width   : 430px;
+    /* padding-bottom: 50px; */
 }
+
 
 .form-name {
     margin-top   : 1rem;
