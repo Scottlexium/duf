@@ -44,7 +44,8 @@ a.level {
 }
 
 .fab-icon::before {
-    content: "\f013";
+    /* content: "\f013"; */
+    content: "\f0c9";
 }
 
 .fab-opened .fab-icon::before {
@@ -106,7 +107,8 @@ a.level {
 }
 
 .fab-buttons {
-    background: #006694;
+    /* background: #006694; */
+    background: #dd8500;
 }
 
 .fab-buttons:hover {
@@ -126,7 +128,7 @@ a.level {
 }
 
 .fab-buttons span.fab-rotate {
-    background: #DB4437;
+    background: #c96b00;
     position: absolute;
     transform: rotate(0deg);
     transition: .3s;

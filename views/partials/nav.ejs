@@ -14,53 +14,59 @@
     </nav>
 </div>
 <%- include('fab.ejs')%>
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init({
-        delay: 0, // values from 0 to 3000, with step 50ms
-        duration: 1000
-    });
-</script>
-<style>
-    @media only screen and (max-width: 600px) {
-
-        .nav ul,
-        .right_section {
-            display: none;
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            delay: 0, // values from 0 to 3000, with step 50ms
+            duration: 1000
+        });
+    </script>
+    <style>
+        .fab-container{
+            visibility: hidden;
         }
+        @media only screen and (max-width: 600px) {
+            .fab-container {
+                visibility: visible;
+            }
 
-        .nav {
-            justify-content: space-between;
-        }
+            .nav ul,
+            .right_section {
+                display: none;
+            }
 
-        .left_section {
-            justify-content: center;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+            .nav {
+                justify-content: space-between;
+            }
 
-        .btns {
-            flex-wrap: nowrap;
-            justify-content: space-between;
-            width: 90%;
-            justify-self: center;
-        }
-    }
-</style>
-<script>
+            .left_section {
+                justify-content: center;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
 
-    const nav = document.getElementById('nav');
-    const contact_nav = document.querySelector('.nav');
-    window.addEventListener('load', (e) => {
-        contact_nav.classList.add('contact_nav');
-    })
-    window.addEventListener('scroll', (e) => {
-        if (window.pageYOffset > 1) {
-            nav.classList.add('active_nav')
-        } else {
-            nav.classList.remove('active_nav')
+            .btns {
+                flex-wrap: nowrap;
+                justify-content: space-between;
+                width: 90%;
+                justify-self: center;
+            }
         }
-    })
-</script>
+    </style>
+    <script>
+
+        const nav = document.getElementById('nav');
+        const contact_nav = document.querySelector('.nav');
+        window.addEventListener('load', (e) => {
+            contact_nav.classList.add('contact_nav');
+        })
+        window.addEventListener('scroll', (e) => {
+            if (window.pageYOffset > 1) {
+                nav.classList.add('active_nav')
+            } else {
+                nav.classList.remove('active_nav')
+            }
+        })
+    </script>
