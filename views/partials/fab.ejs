@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="/styles/fab.css" rel="stylesheet">
+
+<div class="fab-container">
+    <a class="fab-buttons level" href="/" tooltip="Client Management">
+        <i class="fa fa-home level-item" aria-hidden="true"></i>
+    </a>
+    <a class="fab-buttons level" href="/" tooltip="Create Learning Path">
+        <i class="fa fa-info level-item" aria-hidden="true"></i>
+    </a>
+    <a class="fab-buttons level" href="/" tooltip="Create Course">
+        <i class="fa fa-paper-plane level-item" aria-hidden="true"></i>
+    </a>
+    <a class="fab-buttons level" href="/" tooltip="Create Module">
+        <i class="fa fa-th-large level-item" aria-hidden="true"></i>
+    </a>
+    <a class="fab-buttons level" href="/" tooltip="Create Module Component">
+        <i class="fa fa-square level-item" aria-hidden="true"></i>
+    </a>
+    <a class="fab-buttons" tooltip="Admin Options">
+        <span><span class="fab-rotate level"><i class="fa fab-icon level-item" aria-hidden="true"></i>
+            </span></span>
+    </a>
+</div>
+
+<script>
+    const body = document.querySelector("body");
+    const fab_nav = document.querySelector(".fab-container");
+    const fab_rotate = document.querySelector(".fab-rotate");
+    const fab_icon = document.querySelector(".fab-icon");
+
+    if (fab_nav) {
+        fab_nav.addEventListener("click", function () {
+            fab_nav.classList.toggle("fab-opened");
+        });
+
+        body.addEventListener("click", function (e) {
+            if (e.target != fab_nav && e.target != fab_rotate && e.target != fab_icon) {
+                fab_nav.classList.remove("fab-opened")
+            }
+        });
+    }
+</script>

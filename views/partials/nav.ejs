@@ -10,8 +10,10 @@
             <a class="a" href="/contact_us">Contact</a>
         </ul>
         <a class="donate_btn_nav" href="#donate_section">Donates</a>
+
     </nav>
 </div>
+<%- include('fab.ejs')%>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
     AOS.init({
@@ -51,7 +53,7 @@
 
     const nav = document.getElementById('nav');
     const contact_nav = document.querySelector('.nav');
-    window.addEventListener('load', (e)=>{
+    window.addEventListener('load', (e) => {
         contact_nav.classList.add('contact_nav');
     })
     window.addEventListener('scroll', (e) => {
