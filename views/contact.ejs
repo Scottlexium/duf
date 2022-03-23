@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <%- include('./partials/nav.ejs')%>
+</head>
+
+<body>
+
+    <style>
+        .active_contact_nav {
+            /* background-color: red; */
+        }
+    </style>
+    <section>
+        <div class="main">
+            <div class="main-center center">
+                <p class="main-title">Doers Upliftment Foundation</p>
+                <h1>CONTACT US</h1>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-flex">
+        <div class="content">
+            <div class="content-center center">
+                <div class="content1 c">
+                    <h2 class="c-h">We Would Love to Hear from You</h2>
+                    <p>Please write or call us with your questions or comments</p>
+                </div>
+                <div class="content2 c ">
+                    <h2 class="c-h">ADDRESS</h2>
+                    <P>Lorem ipsum dolor sit amet, consectetur adipisicing.</P>
+                </div>
+                <div class="content3 " style="display: grid; gap: 10px;">
+                    <!-- <p><i class="fa fa-phone" aria-hidden="true"></i><span>
+                            0908876554</span></p> -->
+                    <p style="display: flex; align-items: center;"><i class="fa fa-phone phone"> <a
+                                style="color: #ff00ff;" href="tel:0908876554">0908876554</a></i></p>
+                    <p style="display: flex; align-items: center;"><i class="fa fa-envelope"> <a style="color: #ff00ff;"
+                                href="mailto:scottlexium@gmail.com">contact@gmail.com</a></i></p>
+                </div>
+
+                <div class="content4 c">
+                    <h2 class="c-h">KEEP IN TOUCH</h2>
+                    <div class="icon">
+                        <li class="icon_li"><i class="fab fa-facebook-f"></i></li>
+                        <li class="icon_li"><i class="fab fa-twitter"></i></li>
+                        <li class="icon_li"><i class="fab fa-google-plus-g"></i></li>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+
+        <form id="contact_form">
+            <h1 class="form-name">Contact Us</h1>
+            <div class="form1 f">
+                <p class="title">Your Name(required)</p>
+                <input type="text" class="name" placeholder="John Doe">
+            </div>
+            <div class="form2 f">
+                <p class="title">Your Email(required)</p>
+                <input type="text" class="email" placeholder="Enter Email">
+            </div>
+            <div class="form3 f">
+                <p class="title">Subject</p>
+                <input type="text" class="subject" placeholder="short description">
+            </div>
+            <div class="form4 f">
+                <p class="title">Your Message</p>
+                <input type="text" class="message" placeholder="Tell Us more">
+            </div>
+
+            <button type="submit">SEND</button>
+        </form>
+    </section>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        const contactForm = document.getElementById('contact_form');
+        const name = document.querySelector('.name').value
+        const email = document.querySelector('.email').value
+        const subject = document.querySelector('.subject').value
+        const message = document.querySelector('.message').value
+        contactForm.addEventListener('submit', async (e, res) => {
+            e.preventDefault();
+            const data = { name, email, subject, message };
+
+            fetch('/contact_post', {
+                method: 'POST', // or 'PUT'
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Success:', data);
+                    res = data.msg;
+                    showToast(res)
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        })
+
+        function showToast(res) {
+            Toastify({
+            text: `${res}`,
+            duration: 3000,
+            destination: "https://github.com/apvarun/toastify-js",
+            newWindow: true,
+            close: true,
+            gravity: "top", // `top` or `bottom`
+            position: "left", // `left`, `center` or `right`
+            stopOnFocus: true, // Prevents dismissing of toast on hover
+            style: {
+                background: "linear-gradient(to right, #ff00ff, #ba55d3)",
+            }, // Callback after click
+        }).showToast();
+        }
+
+
+
+        const new_contact_nav = document.getElementById('nav');
+        window.addEventListener('scroll', (e) => {
+            if (window.pageYOffset > 1) {
+                new_contact_nav.classList.add('active_contact_nav')
+            } else {
+                new_contact_nav.classList.remove('active_contact_nav')
+            }
+        })
+    </script>
+    <script src="app.js"></script>
+
+</body>
+
+</html>

@@ -27,8 +27,46 @@ app.get('/about', (req, res) => {
     res.render('about');
 });
 app.get('/contact_us', (req, res) => {
-    res.render('contact_us');
+    res.render('contact');
 });
+app.post('/contact_post',(req, res)=>{
+    console.log(req.body)
+    // res.status(200).json({msg:'Message Sent Successfully'})
+    let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'Scottlexium@gmail.com',
+            pass: 'xzelejpogqfdpcwk',
+            //   the password above is just the one app password not the real 
+            // account password.
+        },
+    });
+
+    let mailOptions = {
+        from: 'scottlexium@gmail.com',
+        to: req.body.email,
+        subject: `DUF message sent Successfully!`,
+        html: `<p>Dear ${req.body.name}, 
+        We have received your message on subject: ${req.body.subject} at Doers uplifitng foundation, regarding ${req.body.message}
+        </br>
+        we will respond as soon as
+        </br>
+        Regards</br>
+        DUF
+        `,
+    };
+
+    transporter.sendMail(mailOptions, function (err, info) {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(info)
+            res.status(200).json({msg:'Message Sent Successfully!'})
+        }
+        
+    });
+    // res.status(200).json({msg:'Message Sent Successfully'})
+})
 
 // the test section for flutterwave 
 app.get('/flutterwave', (req, res) => {
