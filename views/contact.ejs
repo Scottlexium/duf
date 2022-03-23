@@ -96,10 +96,10 @@
         const preemail = document.getElementById('email');
         const presubject = document.getElementById('subject');
         const premessage = document.getElementById('message');
-        const name = prename.value;
-        const email = preemail.value;
-        const subject = presubject.value;
-        const message = premessage.value;
+        let name = prename.value;
+        let email = preemail.value;
+        let subject = presubject.value;
+        let message = premessage.value;
         contactForm.addEventListener('submit', async (e, res) => {
             e.preventDefault();
             const data = { name, email, subject, message };
@@ -117,6 +117,7 @@
                         console.log('Success:', data);
                         if (data.msg) {
                             res = data.msg
+                            name = '';
                         }
                         if (data.err) {
                             res = data.err;

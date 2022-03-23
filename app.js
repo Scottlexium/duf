@@ -69,6 +69,7 @@ app.post('/contact_post',(req, res)=>{
             res.status(200).json({err:'An error occured!'})
         } else {
             console.log(info)
+            smtpError = "Message sent Successfully!";
             res.status(200).json({msg:smtpError})
         }
         
