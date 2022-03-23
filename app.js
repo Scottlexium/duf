@@ -66,7 +66,7 @@ app.post('/contact_post',(req, res)=>{
             else{
                 smtpError = 'Unknown Error!';
             }
-            res.status(200).json({err:'An error occured!'})
+            res.status(200).json({err:smtpError})
         } else {
             console.log(info)
             smtpError = "Message sent Successfully!";
