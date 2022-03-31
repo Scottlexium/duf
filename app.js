@@ -256,6 +256,9 @@ app.post('/success', (req, res) => {
         res.render('success', { title: "DUF" });
     });
     res.render('success', {title:'DUF'})
+});
+app.get('/event', (req, res)=>{
+    res.render('event');
 })
 app.get('/favicon.ico', (req, res) => {
     res.status(200)

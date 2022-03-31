@@ -1,0 +1,219 @@
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+}
+
+.about {
+    height             : 100vh;
+    width              : 100%;
+    display            : flex;
+    justify-content    : center;
+    background-image   : url('/Assets/about1.jpg');
+    background-size    : cover;
+    background-position: center;
+    text-align         : center;
+}
+
+.about-center {
+    width           : 90vw;
+    padding         : 2rem;
+    padding-top     : 4rem;
+    margin-top      : 4rem;
+    background-color: rgba(255, 255, 255, 0.705);
+
+}
+
+.mission {
+    font-size  : 3vw;
+    font-weight: bold;
+    position   : relative;
+
+}
+
+.mission::after {
+    content         : '';
+    position        : absolute;
+    top             : 50%;
+    right           : 0;
+    width           : 15vw;
+    height          : 0.1rem;
+    background-color: black;
+}
+
+.mission::before {
+    content         : '';
+    position        : absolute;
+    top             : 50%;
+    left            : 0;
+    width           : 15vw;
+    height          : 0.1rem;
+    background-color: black;
+}
+
+
+.mission-content {
+    margin-top  : 4rem;
+    word-spacing: 1rem;
+    line-height : 1.6rem;
+    position    : relative;
+}
+
+.mission-content::before {
+    content         : '';
+    position        : absolute;
+    width           : 0.1vw;
+    height          : 13rem;
+    background-color: black;
+    left            : 0;
+}
+
+
+.executives {
+    background-color: white;
+    width           : 100%;
+    height          : 50vh;
+    display         : flex;
+    /* align-items  : center; */
+}
+
+.exectives-center {
+    width          : 90vw;
+    height         : 70vh;
+    margin-top     : 2rem;
+    display        : flex;
+    flex-wrap      : wrap;
+    justify-content: space-around;
+    /* align-items : center; */
+    text-align     : center;
+
+}
+
+img {
+    border-radius: 50%;
+    width        : 10rem;
+    height       : 10rem;
+    display      : block;
+    object-fit   : cover;
+}
+
+.history {
+    background-attachment: fixed;
+    text-align           : left;
+    height               : 100%;
+    background-image     : url('/Assets/history2.jpg');
+}
+
+.history-center {
+    color           : white;
+    background-color: rgba(0, 0, 0, 0.534);
+}
+
+.history-name {
+    font-size  : 3vw;
+    font-weight: bold;
+}
+
+.history-content {
+    margin-top  : 2rem;
+    word-spacing: 1rem;
+    line-height : 1.6rem;
+}
+
+.values-container {
+    margin-top: 2rem;
+}
+
+.values-name {
+    font-size  : 4vw;
+    font-weight: bold;
+}
+
+.value-list-container {
+    line-height: 3rem;
+    font-size  : 1.5rem;
+
+}
+
+.fund-name {
+    font-size  : 4vw;
+    font-weight: bold;
+}
+
+.fund-container {
+    margin-top : 2rem;
+    line-height: 3rem;
+    font-size  : 1.3rem;
+}
+
+.action {
+    width           : 100%;
+    background-color: black;
+    display         : flex;
+    justify-content : center;
+    color           : white;
+    padding-top     : 2rem;
+    /* margin-bottom: 5rem; */
+}
+
+.action-center {
+    width                : 90vw;
+    height               : fit-content;
+    padding-top          : 1rem;
+    padding-bottom       : 1rem;
+    text-align           : center;
+    background-image     : url('/Assets/poverty.jpg');
+    background-position  : center;
+    background-attachment: fixed;
+    background-size      : cover;
+    position             : relative;
+}
+
+.action-p {
+    font-size  : 3vw;
+    font-weight: bold;
+}
+
+.action-btn {
+    display        : flex;
+    gap            : 1rem;
+    justify-content: center;
+}
+
+button {
+    background-color: #fdb453;
+    border          : none;
+    color           : white;
+    font-size       : 1rem;
+    font-weight     : bold;
+    border-radius   : 20px;
+    padding         : 0.5rem 1rem 0.5rem 1rem;
+    margin-top      : 2rem;
+}
+
+.dnt {
+    background-color: #9370db;
+    border-radius   : 0px;
+
+
+}
+
+.bas {
+    background-color: #fdb453;
+    border-radius   : 0px;
+
+}
+
+@media screen and (max-width:480px) {
+
+    .executives {
+        height     : 100%;
+        line-height: 2rem;
+    }
+
+    .exectives-center {
+        display: block;
+        height : 100%;
+
+    }
+}

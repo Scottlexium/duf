@@ -1,0 +1,258 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main{
+    height: 50vh;
+    width: 100%;
+    text-align: center;
+    padding-top: 5rem;
+    background-image: url('/Assets/event.jpg');
+    background-position: center;
+    
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.452);
+    background-blend-mode: multiply;
+    color: white;
+    position: relative;
+}
+
+h1{
+    letter-spacing: 0.8rem;
+    font-size: 3rem;
+    
+}
+
+.h-e{
+    width: fit-content;
+    height: fit-content;
+    color: white;
+    display: flex;
+    gap: 1rem;
+    position: absolute;
+    background-color: yellow;
+    top: 97%;
+    left: 30%;
+    padding:0.5rem ;
+}
+
+
+
+.section-center{
+    display: flex;
+    margin-top: 3rem;
+    justify-content: space-around;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+.event-1{
+    /* border: 2px solid black; */
+    width: fit-content;
+    text-align: center;
+    position: relative;
+    line-height: 2rem;
+    padding-bottom: 2rem;
+    box-shadow: -1px 4px 22px 6px rgba(0,0,0,0.21);
+    -webkit-box-shadow: -1px 4px 22px 6px rgba(0,0,0,0.21);
+    -moz-box-shadow: -1px 4px 22px 6px rgba(0,0,0,0.21);
+}
+
+.event-1 img{
+    width: 300px;
+    height: 200px;
+   
+    
+}
+
+.eventp{
+    background-color: yellow;
+    width: fit-content;
+    height: fit-content;
+    padding: 1rem;
+    line-height: 1rem;
+    position: absolute;
+    top: 42%;
+    left: 10%;
+}
+
+.time{
+   
+    display: flex;
+    /* height: 5rem; */
+    align-items: center;
+    margin-top: 4rem;
+    justify-content: space-around;
+
+}
+
+.time p i{
+    color: yellow;
+}
+
+.para{
+    font-weight: bold;
+    width: 90%;
+    
+}
+
+.para1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.question-title{
+    margin-top: 4rem;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.438);
+    background-image: url('poverty2.jpg');
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+}
+
+.overlay{
+    background-color: rgba(255, 255, 255, 0.842);
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    margin-top: 4rem;
+    
+}
+
+.main-title{
+    line-height: 3rem;
+    position: absolute;
+    z-index: 2;
+    
+}
+
+h4{
+    letter-spacing: 0.1rem;
+    font-size: 3rem;
+
+    font-weight: bold;
+}
+
+
+
+
+.question-center{
+    width: 90vw;
+    background-color: rgba(255, 255, 255, 0.555);
+    padding-left: 1rem;
+    position: relative;
+    /* padding-bottom: 3rem; */
+    
+   
+}
+
+.btn{
+    position: relative;
+    display: flex;
+    
+    padding-left: 2rem;
+    padding-right: 2rem;
+    
+    
+}
+button{
+    border: none;
+    position: absolute;
+    background-color: white;
+   
+    
+    
+}
+
+.qt{
+    background-color: white;
+    padding: 0;
+}
+
+.show button{
+    background-color: brown;
+}
+
+.question-content{
+    margin-top: 10rem;
+}
+.question-cent{
+    height: 100vh;
+    position: absolute;
+    padding-top: 2rem;
+    
+    z-index: 2;
+}
+
+
+
+
+.q{
+    display: flex;
+    width: 80vw;
+    justify-content: space-between;
+    border-radius: 10px;
+    padding: 0.5rem;
+    background-color: white;
+}
+
+.show .q{
+    background-color: brown;
+}
+
+.question1{
+    
+    margin-bottom: 2rem;
+   
+}
+
+.question2{
+    margin-bottom: 2rem;
+}
+
+.hide{
+    display: none;
+    width: fit-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 0;
+
+    
+}
+
+.show .hide{
+    display: block;
+     
+   
+}
+
+.minus{
+    display: none;
+}
+
+.show .minus{
+    display: block;
+}
+
+.show .plus{
+    display: none;
+}
+
+
+/* @media screen and ( max-width: 500px){
+    q{
+        display: flex;
+        width: 10px;
+        justify-content: space-between;
+        border-radius: 10px;
+        
+        background-color: white;
+    }
+} */
