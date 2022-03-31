@@ -74,18 +74,23 @@
     width           : 100%;
     height          : 50vh;
     display         : flex;
+    justify-content: center;
+    /* added justify content center => Scott Lexium */
     /* align-items  : center; */
 }
 
 .exectives-center {
     width          : 90vw;
-    height         : 70vh;
+    /* height         : 70vh; */
+    height: auto;
     margin-top     : 2rem;
     display        : flex;
     flex-wrap      : wrap;
     justify-content: space-around;
-    /* align-items : center; */
+    align-items : center;
     text-align     : center;
+
+    /* added align items and made height auto => Scott Lexium*/
 
 }
 
