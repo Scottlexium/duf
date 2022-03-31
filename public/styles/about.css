@@ -1,8 +1,8 @@
-* {
+/* * {
     margin    : 0;
     padding   : 0;
     box-sizing: border-box;
-}
+} */
 
 .about {
     height             : 100vh;
@@ -94,7 +94,7 @@
 
 }
 
-img {
+.img {
     border-radius: 50%;
     width        : 10rem;
     height       : 10rem;
@@ -185,7 +185,7 @@ img {
     justify-content: center;
 }
 
-button {
+.button {
     background-color: #fdb453;
     border          : none;
     color           : white;
@@ -208,7 +208,18 @@ button {
     border-radius   : 0px;
 
 }
-
+.subscibe{
+    height: 60px;
+}
+.subInput{
+    height: 60px;
+}
+.exectives-center div{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 @media screen and (max-width:480px) {
 
     .executives {
