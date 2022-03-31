@@ -39,6 +39,7 @@ a.level {
     margin: 1em 3em 3em 1em;
     position: fixed;
     bottom: 0;
+    margin-bottom: 100px;
     right: 0;
     z-index: 990;
 }
